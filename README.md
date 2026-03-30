@@ -1,79 +1,129 @@
-🚀 Maven JAR Application – Demo Project
-📌 Project Overview
+# 🚀 Maven JAR Application (Demo Project)
 
-This is a simple Java application built using Apache Maven.
-It demonstrates how to:
+<p align="center">
+  <b>Simple Java Application using Maven Build Tool</b><br>
+  Build • Package • Run • Debug
+</p>
 
-Create a Maven project
-Build a JAR file
-Fix common Maven errors
-Run the application successfully
-🛠️ Technologies Used
-Java (JDK 11 or higher)
-Apache Maven
-Linux / AWS EC2 (Amazon Linux)
-⚙️ Setup Instructions
-1️⃣ Install Java & Maven
+---
+
+## 📌 Overview
+
+This project demonstrates how to build and run a **Java application using Apache Maven**.
+It covers the complete workflow from project creation to execution, including **real-world error handling**.
+
+---
+
+## 🛠️ Tech Stack
+
+* ☕ Java (JDK 11+)
+* 📦 Apache Maven
+* 🐧 Linux / AWS EC2 (Amazon Linux)
+
+---
+
+## ⚙️ Installation & Setup
+
+### 🔹 Install Java & Maven
+
+```bash
 sudo yum update -y
 sudo yum install java-11-amazon-corretto -y
 sudo yum install maven -y
+```
 
-Verify:
+### 🔹 Verify Installation
 
+```bash
 java -version
 mvn -version
-2️⃣ Create Maven Project
+```
+
+---
+
+## 🚀 Project Setup
+
+### 🔹 Create Maven Project
+
+```bash
 mvn archetype:generate \
 -DgroupId=com.naresh \
 -DartifactId=demo-app \
 -DarchetypeArtifactId=maven-archetype-quickstart \
 -DinteractiveMode=false
-3️⃣ Navigate to Project
+```
+
+### 🔹 Navigate to Project
+
+```bash
 cd demo-app
-4️⃣ Build Project
+```
+
+---
+
+## 🏗️ Build the Application
+
+```bash
 mvn clean package
+```
 
-👉 This will:
+✔️ This will:
 
-Compile code
-Run tests
-Create JAR file
-5️⃣ Run Application
+* Compile code
+* Run tests
+* Generate JAR file
+
+---
+
+## ▶️ Run the Application
+
+```bash
 java -jar target/demo-app-1.0-SNAPSHOT.jar
-📂 Project Structure
+```
+
+---
+
+## 📂 Project Structure
+
+```
 demo-app/
  ├── src/
- │   ├── main/java        # Application code
- │   └── test/java        # Test cases
- ├── pom.xml              # Maven configuration
- └── target/              # Build output (JAR file)
-🔥 Common Errors & Solutions
-❌ 1. Source option 5 is no longer supported
+ │   ├── main/java        → Application code
+ │   └── test/java        → Test cases
+ ├── pom.xml              → Maven configuration
+ └── target/              → Output (JAR file)
+```
 
-Error:
+---
 
+## 🔥 Common Errors & Fixes
+
+### ❌ 1. Java Version Error
+
+```
 Source option 5 is no longer supported
+```
 
-Reason:
-Old Maven project uses Java 1.5
+✔️ **Fix:**
 
-Fix: Add this in pom.xml
-
+```xml
 <properties>
   <maven.compiler.source>11</maven.compiler.source>
   <maven.compiler.target>11</maven.compiler.target>
 </properties>
-❌ 2. No main manifest attribute
+```
 
-Error:
+---
 
+### ❌ 2. No Main Manifest Attribute
+
+```
 no main manifest attribute
+```
 
-Reason:
-JAR doesn’t know which class to run
+✔️ **Fix:**
 
-Fix: Add plugin in pom.xml
-
+```xml
 <build>
   <plugins>
     <plugin>
@@ -90,39 +140,57 @@ Fix: Add plugin in pom.xml
     </plugin>
   </plugins>
 </build>
-❌ 3. Malformed POM (build tag error)
+```
 
-Error:
+---
 
+### ❌ 3. Malformed POM Error
+
+```
 Unrecognised tag: 'build'
+```
 
-Reason:
-<build> placed inside <dependencies>
+✔️ **Fix:**
 
-Fix:
+* Ensure `<build>` is **outside `<dependencies>`**
 
-Move <build> outside <dependencies>
-🎯 Key Maven Commands
-mvn clean      # Remove old build
-mvn compile    # Compile code
-mvn test       # Run tests
-mvn package    # Create JAR/WAR
-mvn install    # Install in local repo
-💡 Key Concepts
-JAR → Standalone application (runs with java -jar)
-WAR → Web application (deploy on Tomcat)
-pom.xml → Configuration file for dependencies & build
-🚀 Output
+---
+
+## 🧠 Maven Lifecycle
+
+```
+clean → compile → test → package → install
+```
+
+---
+
+## 🎯 Key Concepts
+
+* **JAR** → Standalone app (runs using JVM)
+* **WAR** → Web app (deploy on Tomcat)
+* **pom.xml** → Project configuration file
+
+---
+
+## ✅ Output
+
+```
 Hello Naresh! Your JAR is running successfully 🚀
-📚 Learning Outcome
+```
 
-By completing this project, you learned:
+---
 
-Maven basics
-Build lifecycle
-Dependency management
-Debugging real-world errors
-Running Java applications
-👨‍💻 Author
+## 💡 What You Learned
 
-Naresh
+✔️ Maven project setup
+✔️ Build lifecycle
+✔️ Dependency management
+✔️ Debugging real errors
+✔️ Running Java applications
+
+---
+
+## 👨‍💻 Author
+
+**Naresh**
+
